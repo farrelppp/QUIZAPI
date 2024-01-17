@@ -41,7 +41,7 @@ exports.submitMany = async (req, res) => {
     try {
         let benar = 0
         let totalSoal = jobsheet.quizId.length
-        for (let i = 0; i < totalSoal ; 1++) {
+        for (let i = 0; i < totalSoal ; i++) {
             const quiz = await Quiz.findOne({
                 limit: 1,
                 where: {

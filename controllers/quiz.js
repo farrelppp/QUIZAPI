@@ -1,4 +1,5 @@
 const db = require("../models");
+const quiz = require("../models/quiz")
 const Quiz = db.quizzes;
 
 // CREATE: untuk menambahkan data kedalam tabel quiz
@@ -82,7 +83,9 @@ exports.findOne = async (req, res) => {
         const quiz = await Quiz.findByPk(id, { rejectOnEmpty: true })
 
         res.json({
-            message: `Quiz retrieved successfully with id=${id}`
+            message: `Quiz retrieved successfully with id=${id}`,
+            data: quiz,
+
         });
         
     } catch (error) {
